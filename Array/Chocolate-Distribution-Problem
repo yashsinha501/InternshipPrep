@@ -1,0 +1,13 @@
+    long long findMinDiff(vector<long long> a, long long n, long long m){
+        if(m==0 || n==0)return 0;
+        sort(a.begin(),a.end());
+        if (n < m)
+            return -1;    
+        long long i=0,j=m-1;
+        long long ans=INT_MAX;
+        while(j<n){
+            ans=min(ans,abs(a[i]-a[j]));
+            i++;j++;
+        }
+        return ans;
+    } 
